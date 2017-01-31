@@ -1,3 +1,8 @@
+devschool_biblio:
+    resource: "@DevschoolBiblioBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
