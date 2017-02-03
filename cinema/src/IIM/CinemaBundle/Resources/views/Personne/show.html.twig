@@ -1,0 +1,16 @@
+{# src\IIM\CinemaBundle\Resources\views\Personne\show.html.twig #}
+{% extends 'IIMCinemaBundle::layout.html.twig' %}
+
+{% block title %}Liste des realisateurs{% endblock %}
+
+{% block body %}
+
+<h1>{{ realisateur.nom }}</h1>
+
+<p>{{ realisateur.prenom }}</p>
+
+<p><span>Né en : {{ realisateur.dateNaissance | date('d/m/Y') }}</span></p>
+
+<p><a href="{{ path('page_films') }}">Retour</a></p>
+
+{% endblock %}

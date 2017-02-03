@@ -1,0 +1,20 @@
+{# src\IIM\CinemaBundle\Resources\views\Film\show.html.twig #}
+{% extends 'IIMCinemaBundle::layout.html.twig' %}
+
+{% block title %}Liste des films{% endblock %}
+
+{% block body %}
+
+<h1>{{ film.titre }}</h1>
+
+<span>Réalisé par {{ film.realisateur }}</span>
+
+<p>{{ film.synopsis }}</p>
+
+<p><span>Sortie en : {{ film.dateSortie | date('d/m/Y') }}</span></p>
+
+<p><span>Genre : {{ film.genre }}</span></p>
+
+<p><a href="{{ path('page_films') }}">Retour</a></p>
+
+{% endblock %}

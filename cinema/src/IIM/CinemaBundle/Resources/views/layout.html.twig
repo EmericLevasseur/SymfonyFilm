@@ -1,0 +1,31 @@
+{# src/IIM/CinemaBundle/Resources/views/layout.html.twig #}
+    <head>
+        <title>{% block title %}IIM Films{% endblock %}</title>
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" />
+        <link rel="stylesheet" href="{{ asset('css/shop-item.css') }}" />
+    </head>
+
+    <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="{{ path('page_accueil') }}">Devschool</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="">Bibliothèque</a></li>
+                    <li><a href="{{ path('page_films') }}">Cinema</a></li>
+                    <li><a href="{{ path('admin_film_liste') }}">Admin</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+        <div id="content">
+            {% block body %}{% endblock %}
+        </div>
+    </body>

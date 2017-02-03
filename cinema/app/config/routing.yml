@@ -1,0 +1,13 @@
+iim_admin:
+    resource: "@IIMAdminBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+iim_cinema:
+    resource: "@IIMCinemaBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
