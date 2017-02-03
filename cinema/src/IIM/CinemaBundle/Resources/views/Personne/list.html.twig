@@ -24,15 +24,19 @@
     <br />
 
     {% for realisateur in realisateurs %}
-    <div class="thumbnail">
-        <div class="caption-full">
-        <h4 class="pull-right">{{ realisateur.nom }}</h4>
-        <h4>{{ realisateur.prenom }}</h4>
-    </div>
-    <div class="ratings">
-        <p class="pull-right">{{ realisateur.dateNaissance | date('d/m/Y') }}</p>
-    </div>
-    </div>
+    <div class="well">
+          <div class="row">
+                <div class="col-md-12">
+        <strong>{{ realisateur.prenom}} {{ realisateur.nom }}</strong> ({{"now"|date('Y') - realisateur.dateNaissance|date('Y')}} ans)<br />
+        </br>
+        <hr />
+<div class="text-right">
+  <a href="{{ path('page_realisateurs_films') }}" class="btn btn-success">Voir ses films</a>
+</div>
+</div>
+      </div>
+</div>
+
     {% endfor %}
 
     </div>

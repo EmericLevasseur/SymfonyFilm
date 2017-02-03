@@ -1,11 +1,56 @@
 {# src\IIM\AdminBundle\Resources\views\Genre\list.html.twig #}
-<h1>Liste des genres :</h1>
-<ul>
-{% for genre in genres %}
-    <li>
-        <a href="{{ path('admin_genre_modif', {'id': genre.id}) }}">{{ genre.nom }}</a>
-        <a href="{{ path('admin_genre_supprimer', {'id': genre.id}) }}">(x)</a>
-    </li>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+  <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" />
+  <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}" />
+
+  </head>
+
+
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand">Administration</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li><a href="{{ path('admin_film_liste') }}">Liste des films</a></li>
+            <li class="active"><a href="{{ path('admin_genre_liste') }}">Liste genres</a></li>
+            <li><a href="{{ path('admin_realisateur_liste') }}">Liste réalisateurs</a></li>
+            <li><a href="{{ path('page_films') }}">Retour au site</a></li>
+          </ul>
+        </div>
+
+
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">Liste des genres</h1>
+
+            <div class="table-responsive">
+  <table class="table table-striped">
+    <tbody>
+      {% for genre in genres %}
+  <tr>
+    <td><a href="{{ path('admin_genre_modif', {'id': genre.id}) }}">{{ genre.nom }}</a>
+    <a class="droite" href="{{ path('admin_genre_supprimer', {'id': genre.id}) }}"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a></td>
 {% endfor %}
-</ul>
-<a href="{{ path('admin_genre_ajout') }}">Ajouter</a>
+  </tr>
+  </tbody>
+</table>
+</div>
+    <center><a href="{{ path('admin_genre_ajout') }}" role="button" class="btn btn-success">Ajouter un genre</a></center>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>

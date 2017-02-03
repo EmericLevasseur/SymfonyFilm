@@ -36,11 +36,15 @@ class Personne
     private $prenom;
 
     /**
-     * @var string
+     * @var date
      *
-     * @ORM\Column(name="date_naissance", type="string", length=255)
+     * @ORM\Column(name="date_naissance", type="date", length=255)
      */
     private $dateNaissance;
+
+    public function __toString(){
+      return $this->nom . ' ' .$this->prenom;
+    }
 
 
     /**

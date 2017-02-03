@@ -43,9 +43,9 @@ class Film
     private $dateSortie;
 
     /**
-     * @var string
+     * @var int
      *
-     * @ORM\Column(name="realisateur", type="string", length=255)
+     * @ORM\ManyToOne(targetEntity="Personne", inversedBy="films")
      */
     private $realisateur;
 
@@ -140,7 +140,7 @@ class Film
     /**
      * Set realisateur
      *
-     * @param string $realisateur
+     * @param int $realisateur
      *
      * @return Film
      */
@@ -154,7 +154,7 @@ class Film
     /**
      * Get realisateur
      *
-     * @return string
+     * @return int
      */
     public function getRealisateur()
     {

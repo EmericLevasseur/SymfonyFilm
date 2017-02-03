@@ -1,4 +1,4 @@
-{# src\IIM\AdminBundle\Resources\views\Film\list.html.twig #}
+{# src\IIM\AdminBundle\Resources\views\Personne\list.html.twig #}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -24,30 +24,30 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li class="active"><a href="{{ path('admin_film_liste') }}">Liste des films</a></li>
+            <li><a href="{{ path('admin_film_liste') }}">Liste des films</a></li>
             <li><a href="{{ path('admin_genre_liste') }}">Liste genres</a></li>
-            <li><a href="{{ path('admin_realisateur_liste') }}">Liste réalisateurs</a></li>
+            <li class="active"><a href="{{ path('admin_realisateur_liste') }}">Liste réalisateurs</a></li>
             <li><a href="{{ path('page_films') }}">Retour au site</a></li>
           </ul>
         </div>
 
 
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">Liste des films</h1>
+          <h1 class="page-header">Liste des réalisateurs</h1>
 
             <div class="table-responsive">
   <table class="table table-striped">
     <tbody>
-      {% for film in films %}
+      {% for realisateur in realisateurs %}
   <tr>
-    <td><a href="{{ path('admin_film_modif', {'id': film.id}) }}">{{ film.titre }}</a>
-    <a class="droite" href="{{ path('admin_film_supprimer', {'id': film.id}) }}"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a></td>
+    <td><a href="{{ path('admin_realisateur_modif', {'id': realisateur.id}) }}">{{ realisateur.prenom }} {{ realisateur.nom }}</a>
+        <a class="droite" href="{{ path('admin_realisateur_supprimer', {'id': realisateur.id}) }}"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a></td>
 {% endfor %}
   </tr>
   </tbody>
 </table>
 </div>
-    <center><a href="{{ path('admin_film_ajout') }}" role="button" class="btn btn-success">Ajouter un film</a></center>
+    <center><a href="{{ path('admin_realisateur_ajout') }}" role="button" class="btn btn-success">Ajouter un Réalisateur</a></center>
         </div>
       </div>
     </div>

@@ -48,14 +48,17 @@ class DefaultController extends Controller
           );
     }
 
+    /**
+    * @Route("/realisateurs", name="page_realisateurs_films")
+    */
 
     public function showRealisateur($id)
     {
-    $realisateur = $this->getDoctrine()->getRepository('IIMCinemaBundle:Personne')->find($id);
+    $films = $this->getDoctrine()->getRepository('IIMCinemaBundle:Personne')->findByRealisateur($id);
 
       return $this->render(
           'IIMCinemaBundle:Personne:show.html.twig',
-          ['realisateur' => $realisateur]
+          ['films' => $films]
         );
     }
 
